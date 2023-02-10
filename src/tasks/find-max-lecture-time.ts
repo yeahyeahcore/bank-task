@@ -1,5 +1,5 @@
-import { hmsToSeconds } from "../utils/hms-to-secords";
-import { secondsToHMS } from "../utils/seconds-to-hms";
+import { hmsToSeconds } from "@/utils/hms-to-secords";
+import { secondsToHMS } from "@/utils/seconds-to-hms";
 import { differenceBeetwenTimesInSeconds } from "../utils/difference-beetwen-times";
 
 import type { Row } from "../types/row.type";

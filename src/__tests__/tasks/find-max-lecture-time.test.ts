@@ -1,11 +1,11 @@
-import { findMaxLectureTime } from "../../tasks/find-max-lecture-time";
+import { findMaxLectureTime } from "@/tasks/find-max-lecture-time";
 
 import {
   ROWS_WITH_MAX_CLASSIC_TIME,
   ROWS_WITH_MAX_INVERT_TIME,
   ROWS_WITH_NULLABLE_TIME,
   ROWS_WITH_INCORRECT_MINUTES,
-} from "../../__mocks__/rows";
+} from "@/__mocks__/rows";
 
 describe("Tasks tests", () => {
   it("test findMaxLectureTime with classic maximum time", () => {

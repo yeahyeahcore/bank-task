@@ -1,7 +1,7 @@
-import { differenceBeetwenTimesInMinutes } from "../utils/difference-beetwen-times";
-import { hmsToSeconds } from "../utils/hms-to-secords";
+import { differenceBeetwenTimesInMinutes } from "@/utils/difference-beetwen-times";
+import { hmsToSeconds } from "@/utils/hms-to-secords";
 
-import type { Row } from "../types/row.type";
+import type { Row } from "@/types/row.type";
 
 export function getLecturesByTime(rows: Row[], minutes: number) {
   const lectures: string[] = [];

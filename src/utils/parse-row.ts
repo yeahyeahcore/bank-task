@@ -1,4 +1,4 @@
-import type { Row } from "../types/row.type";
+import type { Row } from "@/types/row.type";
 
 function replaceSpaces(text: string): string {
   return text.replaceAll("_", " ");
