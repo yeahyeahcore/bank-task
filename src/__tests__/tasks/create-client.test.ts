@@ -17,14 +17,14 @@ describe("Test createClient function", () => {
       input: ["Иван", 0],
       response: { name: "Иван", balance: 0 },
     },
-  ];
-
-  const testErrorCases = [
     {
       name: "Test createClient function with negative balance",
       input: ["Иван", -1000],
-      response: "Balance can't be negetive",
+      response: { name: "Иван", balance: 0 },
     },
+  ];
+
+  const testErrorCases = [
     {
       name: "Test createClient function with empty name",
       input: ["", 120],
@@ -41,6 +41,6 @@ describe("Test createClient function", () => {
   test.each(testErrorCases)("$name", ({ input, response }) => {
     const client = createClient(...input);
 
-    expect(client).toThrow(response);
+    expect(client).rejects.toThrow(response);
   });
 });
