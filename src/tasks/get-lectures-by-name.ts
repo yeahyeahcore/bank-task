@@ -1,4 +1,4 @@
-import type { Row } from "../types/row.type";
+import type { Row } from "@/types/row.type";
 
 export function getLecturesByName(rows: Row[], name: string) {
   const lectures: string[] = [];
