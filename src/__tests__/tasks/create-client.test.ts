@@ -39,8 +39,6 @@ describe("Test createClient function", () => {
   });
 
   test.each(testErrorCases)("$name", ({ input, response }) => {
-    const client = createClient(...input);
-
-    expect(client).rejects.toThrow(response);
+    expect(() => createClient(...input)).toThrow();
   });
 });
