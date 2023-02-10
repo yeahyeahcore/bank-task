@@ -15,7 +15,7 @@ describe("Test createClient function", () => {
     {
       name: "Test createClient function with negative balance",
       input: ["Иван", -1000],
-      response: { name: "Иван", balance: -1000 },
+      response: null,
     },
     {
       name: "Test createClient function with zero balane",
@@ -25,7 +25,7 @@ describe("Test createClient function", () => {
     {
       name: "Test createClient function with empty name",
       input: ["", 120],
-      response: { name: "", balance: 120 },
+      response: null,
     },
   ];
 
