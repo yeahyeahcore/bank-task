@@ -33,9 +33,7 @@ describe("Test createClient function", () => {
   ];
 
   test.each(testCases)("$name", ({ input, response }) => {
-    const client = createClient(...input);
-
-    expect(client).toBe(response);
+    expect(createClient(...input)).toBe(response);
   });
 
   test.each(testErrorCases)("$name", ({ input, response }) => {
