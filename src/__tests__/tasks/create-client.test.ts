@@ -6,27 +6,31 @@ type TestCase = {
   response: { name: string; balance: number };
 };
 
+const mockDate = new Date("2023-01-01T11:11:11.111Z");
+
+jest.spyOn(global, "Date").mockImplementation(() => mockDate);
+
 describe("Test createClient function", () => {
   const testCases: TestCase[] = [
     {
       name: "Test createClient function with normal data",
       input: ["Иван", 550],
-      response: { name: "Иван", balance: 550 },
+      response: { name: "Иван-1672571471111", balance: 550 },
     },
     {
       name: "Test createClient function without balance",
       input: ["Иван"],
-      response: { name: "Иван", balance: 0 },
+      response: { name: "Иван-1672571471111", balance: 0 },
     },
     {
       name: "Test createClient function with zero balane",
       input: ["Иван", 0],
-      response: { name: "Иван", balance: 0 },
+      response: { name: "Иван-1672571471111", balance: 0 },
     },
     {
       name: "Test createClient function with negative balance",
       input: ["Иван", -1000],
-      response: { name: "Иван", balance: 0 },
+      response: { name: "Иван-1672571471111", balance: 0 },
     },
   ];
 
