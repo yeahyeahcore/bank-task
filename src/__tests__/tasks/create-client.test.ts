@@ -1,7 +1,13 @@
 import { createClient } from "@/tasks/create-client";
 
+type TestCase = {
+  name: string;
+  input: [string, number?];
+  response: { name: string; balance: number };
+};
+
 describe("Test createClient function", () => {
-  const testCases = [
+  const testCases: TestCase[] = [
     {
       name: "Test createClient function with normal data",
       input: ["Иван", 550],
@@ -24,19 +30,11 @@ describe("Test createClient function", () => {
     },
   ];
 
-  const testErrorCases = [
-    {
-      name: "Test createClient function with empty name",
-      input: ["", 120],
-      response: "Name can't be empty",
-    },
-  ];
-
-  test.each(testCases)("$name", ({ input, response }) => {
-    expect(createClient(...input)).toBe(response);
+  test.each(testCases)("$name", ({ input: [name, balance], response }) => {
+    expect(createClient(name, balance)).toBe(response);
   });
 
-  test.each(testErrorCases)("$name", ({ input, response }) => {
-    expect(() => createClient(...input)).toThrow();
+  test("Test createClient function with empty name", () => {
+    expect(() => createClient("", 120)).toThrow();
   });
 });
