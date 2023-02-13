@@ -31,7 +31,7 @@ describe("Test createClient function", () => {
   ];
 
   test.each(testCases)("$name", ({ input: [name, balance], response }) => {
-    expect(createClient(name, balance)).toBe(response);
+    expect(createClient(name, balance)).toEqual(response);
   });
 
   test("Test createClient function with empty name", () => {
