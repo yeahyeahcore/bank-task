@@ -39,6 +39,6 @@ describe("Test createClient function", () => {
   });
 
   test("Test createClient function with empty name", () => {
-    expect(() => createClient("", 120)).toThrow();
+    expect(() => createClient("", 120)).toThrow(new Error("Name can't be empty"));
   });
 });
